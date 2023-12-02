@@ -7,6 +7,7 @@ import com.mpatric.mp3agic.InvalidDataException;
 import com.mpatric.mp3agic.Mp3File;
 import com.mpatric.mp3agic.UnsupportedTagException;
 
+
 public class Track {
 	
 	private Mp3File mp3File;
@@ -27,6 +28,7 @@ public class Track {
 	}
 	
 	public Track(String soundFile) {
+		
 		try {
 			mp3File = new Mp3File(soundFile);
 			length = (int) mp3File.getLengthInSeconds();
@@ -50,6 +52,7 @@ public class Track {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		
 	}
 	

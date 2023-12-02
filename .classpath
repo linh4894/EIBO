@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="bin/main" path="src">
+		<attributes>
+			<attribute name="gradle_scope" value="main"/>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17/">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX21"/>
+	<classpathentry kind="lib" path="C:/Users/Steph/Hochschule Rhein Main/Entwicklung interaktiver Benutzungoberflächen/Source and file/source/eibo_simpleminim_new.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Steph/Hochschule Rhein Main/Entwicklung interaktiver Benutzungoberflächen/Source and file/source/eibo_staticscanner.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Steph/Hochschule Rhein Main/Entwicklung interaktiver Benutzungoberflächen/Source and file/source/jl1.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Steph/Hochschule Rhein Main/Entwicklung interaktiver Benutzungoberflächen/Source and file/source/jsminim.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Steph/Hochschule Rhein Main/Entwicklung interaktiver Benutzungoberflächen/Source and file/source/minim.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Steph/Hochschule Rhein Main/Entwicklung interaktiver Benutzungoberflächen/Source and file/source/mp3spi1.9.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Steph/Hochschule Rhein Main/Entwicklung interaktiver Benutzungoberflächen/Source and file/source/tritonus_aos.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Steph/Hochschule Rhein Main/Entwicklung interaktiver Benutzungoberflächen/Source and file/source/tritonus_share.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Steph/Hochschule Rhein Main/Entwicklung interaktiver Benutzungoberflächen/Source and file/mp3agic.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Steph/Hochschule Rhein Main/Entwicklung interaktiver Benutzungoberflächen/Source and file/mp3playerUtil.jar"/>
+	<classpathentry kind="output" path="bin/default"/>
+</classpath>
