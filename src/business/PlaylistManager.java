@@ -14,7 +14,7 @@ public class PlaylistManager {
 	
 	public PlaylistManager() {
 		playlistName = "test";
-		playlistFile = "C:\\Users\\Steph\\eclipse-workspace\\java\\EIBO\\music\\test.m3u";
+		playlistFile = "/EIBO/src/data/playlist/test.m3u";
 		playlist = new Playlist (playlistName, playlistFile);
 		
 		playlists = new ArrayList<>();
