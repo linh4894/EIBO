@@ -2,83 +2,72 @@ package application;
 
 import java.util.HashMap;
 
+import business.MP3Player;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import presentation.scenes.PlayerView;
+import presentation.scenes.PlayerViewController;
 import presentation.scenes.PlaylistView;
 
 public class MP3_App extends Application{
 	
-	private HashMap<String, Pane> scenes;
-	private Stage mainWindow;
-	private Scene mainScene;
+	private Stage primaryStage;
+	private HashMap<ViewName, Pane> views;
+	
+	//private Stage mainWindow;
+	//private Scene mainScene;
 	
 	private Pane playerView;
 	private Pane playlistView;
 	
+	MP3Player player;
+	
 	public void init() {
-		scenes = new HashMap<>();
+		player = new MP3Player();
+		views = new HashMap<>();
+		
+		PlayerViewController playerController = new PlayerViewController(player);
+		playerView = playerController.getRoot();
+		views.put(ViewName.PlayerView, playerView);
+		
+		playlistView = new PlaylistView();
+		views.put(ViewName.PlaylistView, playlistView);
 	}
 	
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			/*
-			 * this.playerView = new PlayerView();
-			 * this.playlistView = new PlaylistView();
-			 * mainWindow = primaryStage;
-			 * Scene scene = new Scene();
-			 * mainWindow.setScene(scene);
-			 * 
-			 * switchView(PLAYER);
-			 * mainWindow.setTitle("Player");
-			 * mainWindow.show();
-			 * 
-			 */
-			//init Views
-			//Pane root = new PlayerView();
-			Pane root = new PlaylistView();
+			this.primaryStage = primaryStage;
+			Pane root = new Pane();
 			
-			//root = new PlayView();
-			//scenes.put("playerView", root);
-			//root = new PlaylistView();
-			
-			//init Scene
 			Scene scene = new Scene(root, 1280, 800);
-			
-			mainWindow = primaryStage;
-			mainScene = scene;
-			
+			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
-			//primaryStage.setFullScreen(true);
-			//primaryStage.setIconified(true);
+			
+			//switchView(ViewName.PlayerView);
+			switchView(ViewName.PlaylistView);
+			
+			primaryStage.setTitle("MP3 Application");
 			primaryStage.show();
+			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 		
 	}
 	
-	public void switchScene(String viewName) {
-		if(mainScene != null) {
-			Pane nextView = scenes.get(viewName);
-			if(nextView != null) {
-				mainScene.setRoot(nextView);
-			}
-			
+	private void switchView(ViewName name) {
+		Scene currentScene = primaryStage.getScene();
+		
+		Pane nextView = views.get(name);
+		
+		if(nextView != null) {
+			currentScene.setRoot(nextView);
 		}
 	}
 	
-	private void switchView(String name) {
-		Scene scene = mainWindow.getScene();
-		switch(name) {
-		//case PLAYER:
-			//scene.setRoot(playerView);
-			//break;
-		}
-	}
 	public static void main(String [] args) {
 		launch(args);
 	}

@@ -42,4 +42,6 @@ public class PlaylistView extends TilePane{
 		this.setOrientation(Orientation.HORIZONTAL);
 		this.getChildren().addAll(leftBox, rightBox);
 	}
+	
+	
 }

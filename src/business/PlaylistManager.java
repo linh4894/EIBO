@@ -1,7 +1,6 @@
 package business;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class PlaylistManager {
 	
@@ -9,7 +8,7 @@ public class PlaylistManager {
 	private String playlistName;
 	private String playlistFile;
 	
-	private List <Playlist> playlists;
+	private ArrayList<Track> tracks;
 	
 	
 	public PlaylistManager() {
@@ -17,7 +16,7 @@ public class PlaylistManager {
 		playlistFile = "/EIBO/src/data/playlist/test.m3u";
 		playlist = new Playlist (playlistName, playlistFile);
 		
-		playlists = new ArrayList<>();
+		tracks = playlist.getTracks();
 	}
 	
 	public Playlist getPlaylist(String name) {
@@ -25,5 +24,11 @@ public class PlaylistManager {
 		return playlist;
 	}
 	
+	public String getPlaylistName() {
+		return playlistName;
+	}
 	
+	public ArrayList<String> getTrackName(){
+		return playlist.getTrackName();
+	}
 }

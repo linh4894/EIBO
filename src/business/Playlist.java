@@ -5,18 +5,17 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 public class Playlist {
 	private String playlistName;
-	private List<Track> tracks;
+	private ArrayList<Track> tracks;
 	private Date creationDate; //LocalDate date = LocalDate.now();
-	private String coverFile;
+	private String file;
 	
 	
-	public Playlist(String playlistName, String coverFile) {
+	public Playlist(String playlistName, String file) {
 		this.playlistName = playlistName;
-		this.coverFile = coverFile;
+		this.file = file;
 		tracks = new ArrayList<Track>();
 		savePlaylist();
 	}
@@ -24,7 +23,7 @@ public class Playlist {
 	public void savePlaylist() {
 		BufferedReader reader;
 		try {
-			reader = new BufferedReader(new FileReader(coverFile));
+			reader = new BufferedReader(new FileReader(file));
 			String line = reader.readLine();
 			
 			while(line != null) {
@@ -51,6 +50,18 @@ public class Playlist {
 	
 	public int numberOfTracks() {
 		return tracks.size();
+	}
+	
+	public ArrayList<Track> getTracks(){
+		return (ArrayList<Track>) tracks;
+	}
+	
+	public ArrayList<String> getTrackName(){
+		ArrayList<String> names = new ArrayList<>();
+		for(Track aktTrack : tracks) {
+			names.add(aktTrack.getTitle());
+		}
+		return names;
 	}
 	
 	public void setPlaylistName(String name) {
