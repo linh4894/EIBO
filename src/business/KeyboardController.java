@@ -31,7 +31,7 @@ public class KeyboardController {
 				if (commands.length > 1)
 					playingFile = mergeName(commands) + ".mp3";
 				
-				mp3Player.play("mp3-songs\\" + playingFile);
+				mp3Player.play("data\\mp3-songs\\" + playingFile);
 				break;
 			case "pause":
 				mp3Player.pause();

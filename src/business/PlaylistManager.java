@@ -13,7 +13,8 @@ public class PlaylistManager {
 	
 	public PlaylistManager() {
 		playlistName = "test";
-		playlistFile = "/EIBO/src/data/playlist/test.m3u";
+		playlistFile = "";
+		///EIBO/src/data/playlist/test.m3u
 		playlist = new Playlist (playlistName, playlistFile);
 		
 		tracks = playlist.getTracks();
